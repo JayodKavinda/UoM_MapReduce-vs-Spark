@@ -2,6 +2,8 @@ import argparse
 
 from pyspark.sql import SparkSession
 
+#this script is used for run spark sql querie in AWS EMR and get the result to S3 bucket
+
 def calculate_delay_by_type(data_source, output_uri):
     with SparkSession.builder.appName("Calculate Delay by Type").getOrCreate() as spark:
         if data_source is not None:
