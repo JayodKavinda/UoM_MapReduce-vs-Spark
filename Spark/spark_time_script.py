@@ -3,6 +3,8 @@ import time
 
 from pyspark.sql import SparkSession
 
+# this script is mainly used for measuring time to execute spark sql query to comparision this data with hive
+
 def calculate_delay_by_type(data_source, query_output_uri, time_output_uri):
     with SparkSession.builder.appName("Calculate Flight Delay").getOrCreate() as spark:
         if data_source is not None:
